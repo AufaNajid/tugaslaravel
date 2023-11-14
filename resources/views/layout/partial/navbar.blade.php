@@ -14,6 +14,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/game">Game</a>
+            <li class="nav-item">
+              {{-- <a class="nav-link" href="">Game</a> --}}
+
           </li>
       </div>
     </div>
