@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PemainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/music', function () {
 //     return view('music');
 // });
-// Route::get('/game', function () {
-//     return view('game');
+// Route::get('/pemain', function () {
+//     return view('pemain');
 // });
 
 Route::get('/music',[MusicController::class,'index']);
@@ -33,4 +34,8 @@ Route::get('/Music/detail/{id}',[\App\Http\Controllers\MusicController::class,'s
 Route::get('/game',[GameController::class,'index']);
 
 Route::get('/Game/gamedetail/{id}',[\App\Http\Controllers\GameController::class,'show']);
+
+Route::get('/pemain',[PemainController::class,'index']);
+
+Route::get('/Pemain/detailpemain/{id}',[\App\Http\Controllers\PemainController::class,'show']);
 
