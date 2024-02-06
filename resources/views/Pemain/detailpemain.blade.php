@@ -22,7 +22,7 @@
 
     <div class="form-group my-1">
         <label for="">team</label>
-        <input type="text" class="form-control" name="team" id="team" value="{{ $pemain->team}}" disabled>
+        <input type="text" class="form-control" name="team" id="team" value="{{ $pemain->kelas->nama}}" disabled>
     </div>
 
     <div class="form-group my-1">
@@ -31,4 +31,4 @@
     </div>
 
  </div>
-@endsection
+@endsection   

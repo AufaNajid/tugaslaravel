@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pemains', function (Blueprint $table) {
+        Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('pemain');
-            $table->integer('umur');
-            $table->string('role');
-            $table->foreignId('team_id');
-            $table->date('tanggal');
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pemains');
+        Schema::dropIfExists('kelas');
     }
 };

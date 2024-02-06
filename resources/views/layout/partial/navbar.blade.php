@@ -16,7 +16,8 @@
             <a class="nav-link" href="/game">Game</a>
             <li class="nav-item">
               <a class="nav-link" href="/pemain">Pemain</a>
-
+              <li class="nav-item">
+                <a class="nav-link" href="/kelas">Team</a>
           </li>
       </div>
     </div>
