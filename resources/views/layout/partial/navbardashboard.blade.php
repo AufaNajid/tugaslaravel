@@ -7,19 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/music">Music</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/game">Game</a>
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Pemain/pemain">Pemain</a>
+              <a class="nav-link" href="/Dashboard/Pemain/pemain">Pemain</a>
             </li>
               <li class="nav-item">
-                <a class="nav-link" href="/kelas">Team</a>
+                <a class="nav-link" href="/Dashboard/Kelas/kelas">Team</a>
               </li>
           
         </div>

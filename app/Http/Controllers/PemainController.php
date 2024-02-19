@@ -8,12 +8,25 @@ use Illuminate\Http\Request;
 
 class PemainController extends Controller
 {
-    public function index(){
+    public function index(Request $request)
+    {
+        $perPage = 10;
+
+        if ($request->has('search')) {
+            $pemain = Pemain::where('pemain', 'LIKE', '%' . $request->search . '%')->paginate($perPage)->onEachSide(3);
+        } else {
+            $pemain = Pemain::paginate($perPage)->onEachSide(3);
+        }
+
+        $kelas = Kelas::all(); 
+
         return view('/Pemain/pemain', [
             'title' => 'pemain',
-            'pemain' => pemain::all(), 
+            'pemain' => $pemain,
+            'kelas' => $kelas,
         ]);
     }
+
     public function show($id)
     {
 
@@ -89,6 +102,30 @@ public function update(Request $request, $id)
     $pemain->update($request->all());
 
     return redirect('/pemain')->with('success', 'Data pemain telah diupdate');
+}
+
+
+public function filter($team_id)
+{
+    $result = Pemain::where('team_id', $team_id)->paginate(10);
+
+    // Mengecek apakah permintaan berasal dari admin
+    if (request()->route()->named('filter_pemain_auth')) {
+        return view('/Pemain/pemain', [
+            "title" => "pemain",
+            "caption" => "Filtered pemain",
+            "pemain" => $result,
+            "kelas" => Kelas::all()
+        ]);
+    } else {
+        // Jika tidak, berarti permintaan berasal dari guest
+        return view('filter_pemain_guest.pemain', [
+            "title" => "pemain",
+            "caption" => "Filtered pemain",
+            "pemain" => $result,
+            "kelas" => Kelas::all()
+        ]);
+    }
 }
 
 
