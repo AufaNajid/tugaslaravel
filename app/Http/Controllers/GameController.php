@@ -15,13 +15,5 @@ class GameController extends Controller
             
         ]);
     }
-
-        public function show($id)
-    {
-        return view('Game.gamedetail', [
-            'tittle' => 'game',
-            'game' => Game::find($id),
-        ]);
-    }
 }
 
